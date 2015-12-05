@@ -11,6 +11,9 @@ class Editor(models.Model):
     estado = models.CharField(max_length=30)
     pais = models.CharField(max_length=50)#el atributo pais tendra maximo 50 caracteres
     website = models.URLField()
+    #....
+	  class Meta:
+        verbose_name_plural = 'Editores'
 
     def __unicode__(self):#__str__ para python 3
         return self.nombre
@@ -20,7 +23,9 @@ class Autor(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=40)
     email = models.EmailField(blank=True)#La BBDD aceptara valores vacios para este atributo
-
+     #....
+	    class Meta:
+        verbose_name_plural = 'Autores'
     def __unicode__(self):#__str__ para python 3
         cadena = "%s %s" %(self.nombre, self.apellido)
         return cadena 
